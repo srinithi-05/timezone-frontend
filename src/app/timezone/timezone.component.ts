@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TimezoneService } from '../timezone.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-timezone',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HttpClientModule],
   templateUrl: './timezone.component.html',
   styleUrls: ['./timezone.component.css'],
 })
@@ -23,9 +24,10 @@ export class TimezoneComponent implements OnInit {
 
   ngOnInit() {
     // Fetch available timezones
-    this.timezoneService.getTimezones().subscribe((zones) => {
-      this.timezones = zones;
+    this.timezoneService.getTimezones().subscribe((zones) => {      
+      this.timezones = zones;      
     });
+    
     setInterval(() => {
       this.updateLocalTime();
       this.updateSelectedTime();

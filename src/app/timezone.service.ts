@@ -6,12 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TimezoneService {
-  private baseUrl = 'https://localhost:7005/api/time'; 
+
+  // private baseUrl = 'https://localhost:7005/api/time';  
+  private baseUrl = 'http://datetime.runasp.net/api/time';  
+
+//  private baseUrl = 'https://v0-git-hub-repository-link-nine.vercel.app' 
 
   constructor(private http: HttpClient) {}
 
   getTimezones(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.baseUrl}/timezones`);
+    return this.http.get<string[]>(`${this.baseUrl}/timezones`);  /* /timezones */
   }
 
   // Fetch the selected timezone time
