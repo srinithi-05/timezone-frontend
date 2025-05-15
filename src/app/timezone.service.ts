@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class TimezoneService {
 
   // private baseUrl = 'https://localhost:7005/api/time';  
-  private baseUrl = 'http://datetime.runasp.net/api/time';  
+  private baseUrl = 'https://datetime.runasp.net/api/time';  
 
 //  private baseUrl = 'https://v0-git-hub-repository-link-nine.vercel.app' 
 
